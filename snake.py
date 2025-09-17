@@ -43,6 +43,7 @@ def move():
     update()
     ontimer(move, 100)
 
+#Cesar Tadeo Bernal Sauceda - A00841810
 def move_food():
     "Move food randomly one step, staying inside boundaries."
     directions = [vector(10,0), vector(-10,0), vector(0,10), vector(0,-10)]
