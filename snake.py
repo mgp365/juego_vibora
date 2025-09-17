@@ -17,7 +17,7 @@ def inside(head):
     return -200 < head.x < 190 and -200 < head.y < 190
 
 
-# Regina Aguilar Garcia - A00841923
+# Regina Aguilar Garcia - A00841923 (cambios de color)
 snake_color = random.choice(['blue', 'orange', 'purple', 'green', 'cyan'])
 food_color = random.choice(['gray', 'brown', 'teal', 'lime', 'black'])
 
