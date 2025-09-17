@@ -16,20 +16,17 @@ def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
 
-<<<<<<< HEAD
 
-current_vel = 200 #inicializar variable de vel
-=======
 # Regina Aguilar Garcia - A00841923
 snake_color = random.choice(['blue', 'orange', 'purple', 'green', 'cyan'])
 food_color = random.choice(['gray', 'brown', 'teal', 'lime', 'black'])
 
->>>>>>> a3486eb8fedf8aa61c5b45d98e836c5e1cca25ea
+current_vel = 200 #Mariana Guerrero Pérez - A00840918 (velocidad)
 def move():
     "Move snake forward one segment."
     head = snake[-1].copy()
     head.move(aim)
-    global current_vel
+    global current_vel #variable global
 
     if not inside(head) or head in snake:
         square(head.x, head.y, 9, 'red')
@@ -54,7 +51,7 @@ def move():
     square(food.x, food.y, 9, food_color)
     update()
     #ontimer(move, v)
-    ontimer(move, current_vel)
+    ontimer(move, current_vel) #aumentar frames
 
 #Cesar Tadeo Bernal Sauceda - A00841810
 def move_food():
@@ -79,9 +76,6 @@ onkey(lambda: change(-velocity, 0), 'Left')
 onkey(lambda: change(0, velocity), 'Up')
 onkey(lambda: change(0, -velocity), 'Down')
 move()
-<<<<<<< HEAD
 
-=======
 move_food()
->>>>>>> a3486eb8fedf8aa61c5b45d98e836c5e1cca25ea
 done()
