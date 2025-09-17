@@ -1,5 +1,5 @@
 from turtle import *
-from random import randrange
+from random import randrange, choice
 from freegames import square, vector
 
 food = vector(0, 0)
@@ -43,6 +43,18 @@ def move():
     update()
     ontimer(move, 100)
 
+def move_food():
+    "Move food randomly one step, staying inside boundaries."
+    directions = [vector(10,0), vector(-10,0), vector(0,10), vector(0,-10)]
+    move = choice(directions)
+    new_food = food.copy()
+    new_food.move(move)
+
+    if inside(new_food):
+        food.move(move)
+
+    ontimer(move_food, 1500) 
+
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
@@ -52,4 +64,5 @@ onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
 move()
+move_food()
 done()
